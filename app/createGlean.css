@@ -1,0 +1,11 @@
+.content-item {
+    @apply w-1/2 max-w-[136px] box-content p-2 text-center rounded-xl cursor-pointer transition-all hover:bg-gray-800 hover:-translate-y-2
+}
+
+.content-item__title {
+    @apply text-sm font-medium mb-3
+}
+
+.content-item__description {
+    @apply text-sm opacity-70
+}
