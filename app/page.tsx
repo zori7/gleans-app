@@ -2,11 +2,13 @@
 import Image from 'next/image';
 import {useEffect, useState} from "react";
 import dynamic from "next/dynamic";
+import {CreateGleanContext, Details} from "@/app/create/CreateGleanContext";
 
 const CreateGlean = dynamic(() => import("@/app/create/CreateGlean"), {ssr: false});
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
+  const [details, setDetails] = useState<Details | undefined>();
 
   const openCreateGlean = () => {
     setIsOpen(true);
@@ -49,7 +51,9 @@ export default function Home() {
         Create Glean
       </button>
 
-      <CreateGlean isOpen={isOpen} onClose={onClose} />
+      <CreateGleanContext.Provider value={{ isOpen, setIsOpen, details, setDetails }}>
+        <CreateGlean onClose={onClose} />
+      </CreateGleanContext.Provider>
 
       <div className="my-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
         <a

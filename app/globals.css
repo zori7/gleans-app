@@ -38,6 +38,23 @@ body {
   @apply bg-green-500 text-white
 }
 
+.base-button.secondary {
+  @apply bg-gray-800 text-gray-600
+}
+
 .base-button .slider {
   @apply absolute top-0 w-full bottom-0 bg-white/80 rounded-full
+}
+
+.base-tag {
+  @apply inline-flex items-center gap-2 text-center bg-white/10 text-white px-4 py-3 font-medium rounded-full min-w-[70px]
+}
+
+.text-bottom-shadow {
+  @apply relative overflow-hidden after:absolute after:top-0 after:bottom-0 after:-right-4 after:-left-4 after:shadow-[0_-10px_15px_0_rgba(25,25,25,1)_inset]
+}
+
+svg {
+  width: 16px;
+  height: 16px;
 }
